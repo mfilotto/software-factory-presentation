@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Presentation Software Factory Docker</title>
+    <link href="css/impress.css" rel="stylesheet"/>
+    <link href="css/font-awesome.css" rel="stylesheet"/>
+    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="css/monokai.css" rel="stylesheet"/>
+</head>
+<body>
+<a href='https://github.com/mfilotto/software-factory-presentation'><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+<div id="impress">
+    <!-- our slides will go here -->
+    <div class="fallback-message">
+        <p>Your browser doesn't support the features required by impress.js, so you
+            are presented with a simplified version of this presentation.</p>
+        <p>For the best experience please use the latest Chrome, Safari, or Firefox 10.</p>
+    </div>
+
+    <header id="title" class="step" data-x="-3000" data-y="-1500">
+        <h1>Software Factory Docker</h1>
+        <img src="img/artifactory.gif" width="800">
+    </header>
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Le plan</h1><br/>
+        <ol>
+            <li class="selected">Principe de Software Factory</li>
+            <li>Industrialisation en pratique</li>
+            <li>Un lexique de l'écosystème</li>
+            <li>Eléments d'une Software Factory</li>
+            <li>Briques de base</li>
+            <li>Patterns Docker utilisés</li>
+            <li>12 Factor App</li>
+        </ol>
+    </section>
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Principe de Software Factory</h1><br/>
+        <ol>
+            <li>Une Software Factory ou usine logicielle</li>
+            <li>S’inspire de l’usine du monde réel</li>
+            <li>Et forme une chaine de production de logiciels</li>
+            <li>Dont les tâches répétitives sont automatisées</li><br/>
+            <li>Exemple de tâches: compilation, tests unitaires, déploiement</li>
+            <li>En entrée : du code source versionné dans un VCS</li>
+            <li>En sortie: des artefacts applicatifs déployables</li>
+        </ol>        
+        <span class="slide-corner-bottom">VCS: logiciel de gestion de version</span>
+    </section> 
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Le plan</h1><br/>
+        <ol>
+            <li>Principe de Software Factory</li>
+            <li class="selected">Industrialisation en pratique</li>
+            <li>Un lexique de l'écosystème</li>
+            <li>Eléments d'une Software Factory</li>
+            <li>Briques de base</li>
+            <li>Patterns Docker utilisés</li>
+            <li>12 Factor App</li>
+        </ol>
+    </section>
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Industrialisation en pratique</h1><br/>
+        <h3>Partir du dépôt d'un VCS pour un process</h3><br/>
+        <ol>
+            <li>avec traçabilité des changements</li>
+            <li>reproductible</li>
+            <li>idempotent</li>
+            <li>à maintenance facilité</li>
+        </ol><br/>
+        <h3>Pour produire un élément à industrialiser du SI</h3><br/>
+        <ol>
+            <li>un livrable applicatif</li>
+            <li>un déploiement</li>
+            <li>une machine virtuelle</li>
+        </ol>        
+        <span class="slide-corner-bottom">VCS: logiciel de gestion de version </span>
+    </section>   
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Le plan</h1><br/>
+        <ol>
+            <li>Principe de Software Factory</li>
+            <li>Industrialisation en pratique</li>
+            <li class="selected">Un lexique de l'écosystème</li>
+            <li>Eléments d'une Software Factory</li>
+            <li>Briques de base</li>
+            <li>Patterns Docker utilisés</li>
+            <li>12 Factor App</li>
+        </ol>
+    </section>
+
+     <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Un lexique l'écosystème</h1><br/>
+        <ol>
+            <li>VCS : Version Control System / logiciel de gestion de version</li>
+            <li>Forge : outil de développement collaboratif de logiciels</li>
+            <li>ChatOPS : modèle de collaboration entre personnes, outils, process et automatisation</li><br/>
+            <li>Software repository : Serveur de dépôts d'artefacts logiciels</li>
+            <li>Software packaging format : Format d'artefacts logiciels</li><br/>         
+            <li>CI : Continuous Integration / intégration continue</li>
+            <li>CD : Continuous Delivery / livraison continue</li><br/>
+            <li>Semantic version : format standard et sémantique de versions de logiciel X.Y.Z</li>            
+        </ol>        
+    </section> 
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Le plan</h1><br/>
+        <ol>
+            <li>Principe de Software Factory</li>
+            <li>Industrialisation en pratique</li>
+            <li>Un lexique de l'écosystème</li>
+            <li class="selected">Eléments d'une Software Factory</li>
+            <li>Briques de base</li>
+            <li>Patterns Docker utilisés</li>
+            <li>12 Factor App</li>
+        </ol>
+    </section>
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Eléments de Software Factory</h1><br/>
+        <ol>
+            <li>VCS : Git</li>
+            <li>Forge : Gitlab</li>
+            <li>CIS : Gitlab CI</li>
+            <li>Software repository : Artifactory</li>
+            <li>Software packaging format : Image Docker</li>
+            <li>Scripts CI: bash / python</li>
+        </ol>
+    </section> 
+ 
+
+    <footer class="step slide" data-x="-1000" data-y="-1500">
+        <h1>Ressources</h1><br/>
+        <p>Présentation disponible hébergée sur <a href="http://mfilotto.github.io/docker-presentation" target="_blank">Github Pages</a></p><br/>
+    </footer>
+
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10"></div>
+
+</div>
+<div class="hint">
+    <p>Utiliser la barre espace ou les flèches pour se déplacer</p>
+</div>
+<script src="lib/impress.js"></script>
+<script src="lib/highlight.pack.js"></script>
+<script>impress().init();</script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
