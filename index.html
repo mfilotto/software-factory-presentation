@@ -105,13 +105,14 @@
         <h1>Un lexique l'écosystème</h1><br/>
         <ol>
             <li>VCS : Version Control System / logiciel de gestion de version</li>
-            <li>Forge : outil de développement collaboratif de logiciels</li>
-            <li>ChatOPS : modèle de collaboration entre personnes, outils, process et automatisation</li><br/>
+            <li>Forge logicielle : outil de développement logiciels collaboratif</li>
+            <li>ChatOPS : modèle de collaboration entre personnes, outils, process et automatisation</li>
             <li>Software repository : Serveur de dépôts d'artefacts logiciels</li>
-            <li>Software packaging format : Format d'artefacts logiciels</li><br/>         
+            <li>Software packaging format : Format d'artefacts logiciels</li>        
             <li>CI : Continuous Integration / intégration continue</li>
-            <li>CD : Continuous Delivery / livraison continue</li><br/>
-            <li>Semantic version : format standard et sémantique de versions de logiciel X.Y.Z</li>            
+            <li>CD : Continuous Delivery / livraison continue</li>  
+            <li>Semantic version : format standard de versions logiciel X.Y.Z</p></li>       
+            <li>Conventional Changelog : conventions de messages de commit</p></li> 
         </ol>        
     </section> 
 
@@ -133,15 +134,74 @@
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
         <h1>Eléments de Software Factory</h1><br/>
         <ol>
-            <li>VCS : Git</li>
-            <li>Forge : Gitlab</li>
+            <li>VCS : Git, VCS décentralisé</li>
+            <li>Forge logicielle : Gitlab, forge open source self-hosted</li>
             <li>CIS : Gitlab CI</li>
-            <li>Software repository : Artifactory</li>
+            <li>Software repository : Artifactory, agrégateur de dépôts</li>
             <li>Software packaging format : Image Docker</li>
-            <li>Scripts CI: bash / python</li>
+            <li>Scripts CI: bash / python, opérations effectuées par la factory</li>
+            <li>ChatOPS: Rocket.Chat et Hubot</li>
         </ol>
     </section> 
  
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Eléments de Software Factory</h1>
+        <h2>Schéma de flux</h2><br/>
+        <img src="img/ci-workflow.png" alt="Ci workflow" width="800">
+    </section> 
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Le plan</h1><br/>
+        <ol>
+            <li>Principe de Software Factory</li>
+            <li>Industrialisation en pratique</li>
+            <li>Un lexique de l'écosystème</li>
+            <li>Eléments d'une Software Factory</li>
+            <li class="selected">Briques de base</li>
+            <li>Patterns Docker utilisés</li>
+            <li>12 Factor App</li>
+        </ol>
+    </section>
+ 
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Briques de base</h1>
+        <h2>Pipeline Gitlab de génération d'images Docker</h2><br/>
+        <img src="img/pipeline-dockerize.png" alt="Ci workflow" width="800"><br/><br/>
+        <ol>
+            <li>Compilation par Docker Builder Pattern</li>
+            <li>Définition par Dockerfile de l'environnement de compilation</li><br/>
+            <li>Dockérisation d'un environnement d'exécution léger</li>
+            <li>Ne contient que le code compilé et le container adapté</li>
+        </ol>        
+    </section>
+ 
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Briques de base</h1>
+        <h2>Pipeline Gitlab de versioning et déploiement d'images Docker</h2>
+        <img src="img/pipeline-deploy.png" alt="Ci workflow" width="800"><br/><br/>
+        <ol>
+            <li>Déploiement par Gitlab sur tous les environnements</li>
+            <li>Génération automatique de versions</li>
+            <li>Notifications du déploiement dans les chans de Rocket.Chat</li>
+        </ol>
+        <span class="slide-corner-bottom"><img src="img/notif-rocketchat.png"></span>               
+    </section>
+ 
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Briques de base</h1>
+        <h2>Génération automatique de versions par</h2><br/>
+        <img src="img/changelog-screenshot.png" alt="Ci workflow" width="600"><br/>
+        <ol>
+            <li>Conventional Changelog : standard de messages de commit</li>
+            <li>Types de changements définis : fix, feat, Breaking Changes</li>
+            <li>Semantic Version : incrément par types de commit</li><br/>
+        </ol>
+    </section>
 
     <footer class="step slide" data-x="-1000" data-y="-1500">
         <h1>Ressources</h1><br/>
